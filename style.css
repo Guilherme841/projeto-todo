@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --cor0: #6C786B;
+    --cor1: #DFD7B2;
+    --cor2: #D1CCAF;
+    --cor3: #D2B88E;
+    --cor4: #F2DCC2;
+}
+
+html,body, main {
+    height: 100vh;
+    background-color: var(--cor4);
+}
+
+main {
+    display: flex;
+}
+
+.container {
+    margin: auto;
+    width: 500px;
+    height: 60vh;
+    background-color: var(--cor3);
+}
