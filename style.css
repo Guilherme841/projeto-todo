@@ -43,7 +43,7 @@ main {
     padding: 10px;
     border: 0;
     outline: 0;
-    font-size: 1.1em;
+    font-size: 1em;
     border-radius: 10px;
     margin-bottom: 10px;
     transition: .3s;
@@ -70,3 +70,4 @@ main {
     cursor: pointer;
     box-shadow: 0 0 0 0.2em;
 }
+
