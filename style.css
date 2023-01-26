@@ -23,7 +23,7 @@ main {
 
 .container {
     margin: auto;
-    width: 250px;
-    height: 500px;
+    width: 290px;
+    height: 620px;
     background-color: var(--cor3);
 }
