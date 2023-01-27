@@ -2,7 +2,7 @@ const deletar = document.getElementById('ideletar');
 const adicionar = document.getElementById('iadicionar');
 const concluida = document.getElementById("iconcluida");
 const tarefa = document.getElementById('itarefa');
-const texto = document.getElementById('lista')
+const sel = document.getElementById('sel')
 
 deletar.addEventListener('click', deletarTarefa);
 adicionar.addEventListener('click', adicionarTarefa);
@@ -13,8 +13,7 @@ function deletarTarefa () {
 };
 
 function adicionarTarefa() {
-    work = String(tarefa.value);
-    texto.innerHTML = work;
+    
 };
 
 function concluirTarefa() {
