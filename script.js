@@ -7,29 +7,34 @@ const sel = document.getElementById('sel')
 deletar.addEventListener('click', deletarTarefa);
 adicionar.addEventListener('click', adicionarTarefa);
 concluida.addEventListener('click', concluirTarefa);
-
+sel.addEventListener('click', seleçao);
 
 function deletarTarefa () {
-    
+    if (sel.classList.contains('selecionou')) {
+        document.getElementById('sel').remove();
+    }
 };
 
 function adicionarTarefa() {
-    work = String(tarefa.value);
+    let work = String(tarefa.value)
     sel.style.backgroundColor = 'rgba(255, 255, 255, 0.726)'
     sel.style.padding = '10px 30px'
     sel.style.borderRadius = '5px'
     sel.style.cursor = 'pointer'
     sel.style.textShadow = '1px 1px 1px rgba(0, 0, 0, 0.300)'
-    sel.innerHTML = work;
-    
+    sel.innerHTML = work
 };
 
-// text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.363);
-// background-color: rgba(255, 255, 255, 0.726);
-// padding: 10px 30px;
-// border-radius: 5px;
-// cursor: pointer;
-
+function seleçao() {
+    sel.classList.toggle('selecionou')
+    if (sel.classList.contains('selecionou')) {
+        sel.style.boxShadow = '0 0 0 0.1em #D2B88E'
+        sel.style.transition = '.2s'
+    } else {
+        sel.style.boxShadow = 'none'
+    }
+    
+};
 
 function concluirTarefa() {
     
