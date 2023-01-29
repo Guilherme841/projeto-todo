@@ -14,6 +14,7 @@
     --cor2: #D1CCAF;
     --cor3: #D2B88E;
     --cor4: #F2DCC2;
+    color: rgba(0, 0, 0, 0.438);
 }
 
 html,body, main {
@@ -35,7 +36,7 @@ main {
 
 .inputs {
     display: grid;
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
     gap: 10px;
 }
 
@@ -72,5 +73,14 @@ main {
 
 #lista {
     text-align: center;
+    padding: 35px;
+    gap: 10px;
 }
+
+.item {
+    text-align: center;
+    margin: 0px 0px 10px;
+
+}
+
 
