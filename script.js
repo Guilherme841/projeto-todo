@@ -27,9 +27,7 @@ function adicionarTarefa() {
         item.style.textShadow = '1px 1px 1px rgba(0, 0, 0, 0.438)';
         item.style.cursor = 'pointer';
         item.innerHTML = dever;
-        if (> 2) {
-            alert('mais de 6')
-        }
+        
     };
 
 };
