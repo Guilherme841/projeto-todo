@@ -5,19 +5,34 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    #parent {
+      background-color: lightgray;
+      width: 250px;
+      height: 250px;
+    }
+  </style>
 </head>
 <body>
-  <button class="btn">Botão 1</button>
+  <!-- <button class="btn">Botão 1</button>
 <button class="btn">Botão 2</button>
-<button class="btn">Botão 3</button>
+<button class="btn">Botão 3</button> -->
+<div id="parent"></div>
   <script>
-    const btns = document.querySelectorAll('.btn');
+//     const btns = document.querySelectorAll('.btn');
 
-btns.forEach((btn) =>
-  btn.addEventListener('click', (event) => {
-    alert(event.currentTarget.textContent);
-  })
-);
+// btns.forEach((btn) =>
+//   btn.addEventListener('click', (event) => {
+    
+//   })
+// );
+
+var parent = document.getElementById('parent');
+var child_nodes = parent.childNodes;
+console.log(child_nodes.length); // let's assume "2"
+parent.appendChild(document.createElement('div'));
+console.log(child_nodes.length); // should output "3"
+
   </script>
 </body>
 </html>
