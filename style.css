@@ -29,7 +29,6 @@ main {
 .container {
     margin: auto;
     width: 290px;
-    height: 620px;
     background-color: var(--cor1);
     border-radius: 10px;
 }
@@ -80,6 +79,7 @@ main {
 .item {
     text-align: center;
     margin: 0px 0px 10px;
+    word-wrap: break-word;
 }
 
 
