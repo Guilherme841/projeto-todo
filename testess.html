@@ -1,37 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    #parent {
-      background-color: lightgray;
-      width: 250px;
-      height: 250px;
-    }
+    #div form label{
+  display: block;
+  padding: 3px;
+}
+
+#div form input{
+border-radius: 3px;
+border: 1px solid #ccc;
+width:100%;
+}
+#div form{
+margin-bottom:10px;
+}
   </style>
 </head>
 <body>
-  <!-- <button class="btn">Botão 1</button>
-<button class="btn">Botão 2</button>
-<button class="btn">Botão 3</button> -->
-<div id="parent"></div>
-  <script>
-//     const btns = document.querySelectorAll('.btn');
+  <header>
 
-// btns.forEach((btn) =>
-//   btn.addEventListener('click', (event) => {
+  </header>
+  <main>
+
+    <div id="div">
+      <form id="form">
+        <label>Grupo</label>
+        <input type="text"><br/>
+        <label>Exercício</label>
+        <input type="text"><br/>
+        <label>Série</label>
+        <input type="text"><br/>
+        <label>Repetição</label>
+        <input type="text"><br/>
+        <label>Carga</label>
+        <input type="text"><br/>
+        <label>Pausa</label>
+        <input type="text"><br/>
+      </form>
+    </div>
+      <button type="button" onclick="adicionaForm()" id="adicionar">Adicionar Exercício</button>
+      <button type="button" onclick="removerForm()" id="adicionar">Remover Exercício</button>
+
+  </main>
+  <footer>
     
-//   })
-// );
+  </footer>
+  <script>
 
-var parent = document.getElementById('parent');
-var child_nodes = parent.childNodes;
-console.log(child_nodes.length); // let's assume "2"
-parent.appendChild(document.createElement('div'));
-console.log(child_nodes.length); // should output "3"
+var newid = 1;
+function adicionaForm() {
+  var formulario = document.getElementById("form")
+  var cln = formulario.cloneNode(true);
+  cln.id = cln.id+newid;
+  document.getElementById("div").append(cln);
+  newid = newid+1;
+}
+
+function removerForm(){
+document.getElementById("div").lastChild.remove();
+
+}
 
   </script>
 </body>
