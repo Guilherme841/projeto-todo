@@ -6,84 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .font-15, input, textarea, select, .container-head, .se-pre-con p, .dialogboxbody, .top_menu .scroll div, .autocomplete-suggestion .txt {
-    font-size: 15px;
-}
-.shadow-2, .bt:hover, .context_menu_pai, .box_login, .datepicker.dropdown-menu, .dialogbox, .overflow-menu ul, .autocomplete-suggestions {
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-.material-icons.large { 
-    font-size: 6rem; 
-    width: 6rem;
-    overflow: hidden;
-}
+    button {
+      width: 250px;
+      background-color: lightblue;
+      padding: 20px;
+      margin: 10px;
+    }
 
-.autocomplete-suggestions {
-  text-align: left;
-  cursor: default;
-  border-top: 0;
-  background: #FFFFFF;
-  position: absolute;
-  max-height: 254px;
-  overflow: hidden;
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-.autocomplete-suggestion {
-  position: relative;
-  line-height: 23px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 1.02em;
-  color: #484848;
-  border-bottom: 1px solid #D7D7D7;
-}
-.autocomplete-suggestion .img {
-  float: left;
-  width: 100px;
-  height: 100%;
-  border-right: 1px solid #D7D7D7;
-  background: #FFFFFF;
-  margin-right: 15px;
-}
-.autocomplete-suggestion .img img {
-  width: 100px;
-  height: 100px;
-}
-.autocomplete-suggestion .txt {
-  padding: 10px;
-  width: 100%;
-  height: 100%;
-  
-}
-.autocomplete-suggestion .txt div {
-  width: 100%;
-  font-weight: bold;
-}
-.autocomplete-suggestion b {
-  color: #0091FF;
-}
-.autocomplete-suggestion.selected {
-  background: #EDEDED;
-  border-right: 7px solid #0091FF;
-}
+    .selecionado {
+      background-color: lightgreen;
+    }
 
   </style>
 </head>
 <body>
-  <!-- Material Icons (Google) -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<div class="autocomplete-suggestions">
-  <div class="autocomplete-suggestion">
-    <div class="img"><i class="material-icons large">face</i>
-    </div>
-    <div class="txt">
-      <div>DES NIVEA ROLL-ON FEM. SENSITIVE & PURE 50ML</div>
-      TEXTO EXTRA
-    </div>
-  </div>
-</div>
+  <section id="container">
+    <button onclick="clique()" class="botao">
+      TESTE
+    </button>
+    <button onclick="clique()" class="botao">
+      TESTE
+    </button>
+    <button onclick="clique()" class="botao">
+      TESTE
+    </button>
+  </section>
+  <script>
+  const botao = document.getElementsByClassName('botao');
+  const arrBotao = Array.from(botao)
+    function clique() {
+      arrBotao.forEach(function(item ,indice, array) {
+        console.log(item, indice)
+      })
+    }
+
+  </script>
 </body>
 </html>
