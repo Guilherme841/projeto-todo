@@ -7,9 +7,12 @@ adicionar.addEventListener('click' , adicionarTarefa);
 concluida.addEventListener('click', concluirTarefa);
 
 function deletarTarefa () {
-    const seletor = document.querySelector('.item');
-    if (seletor.classList.contains('selecionou')) {
-        document.querySelector('.item').remove()
+    const nodeItens = document.querySelectorAll('.item');
+    const arrItens = Array.from(nodeItens)
+    for (const elemento of arrItens) {
+        if (elemento.classList.contains("selecionou")) {
+            elemento.remove()
+        }
     }
 };
 
@@ -28,26 +31,37 @@ function adicionarTarefa() {
         item.style.textShadow = '1px 1px 1px rgba(0, 0, 0, 0.438)';
         item.style.cursor = 'pointer';
         item.textContent = dever;
-        const itemClass = document.querySelector('.item');
-        itemClass.addEventListener('click', seleçao);
-        deletar.addEventListener('click',deletarTarefa);
+        deletar.addEventListener('click', deletarTarefa)
+        const nodeItens = document.querySelectorAll('.item');
+        const arrItens = Array.from(nodeItens)
+        for (const elemento of arrItens) {
+           elemento.addEventListener('click', seleçao)
+        }
     };
-};
+}
 
 function seleçao() {
-    const itemClass = document.querySelector('.item');
-    itemClass.classList.toggle('selecionou');
-    if (itemClass.classList.contains('selecionou')) {
-        itemClass.style.boxShadow = '0 0 0 0.1em #D2B88E'
-        itemClass.style.transition = '.3s'
-    } else {
-        itemClass.style.boxShadow = 'none'
+    const nodeItens = document.querySelectorAll('.item');
+    const arrItens = Array.from(nodeItens)
+    for (const elemento of arrItens) {
+        elemento.addEventListener("click", function() {
+            for (const b of arrItens) {
+                b.classList.remove('selecionou')
+                b.style.boxShadow = 'none'
+            }
+            this.classList.add('selecionou')
+            this.style.boxShadow = '0 0 0 0.1em #D2B88E'
+            this.style.transition = '.3s'
+        })
     }
 };
 
 function concluirTarefa() {
-    const itemClass = document.querySelector('.item');
-    if (itemClass.classList.contains('selecionou')) {
-        itemClass.style.textDecoration = 'line-through'
-    } 
-};
+    const nodeItens = document.querySelectorAll('.item');
+    const arrItens = Array.from(nodeItens)
+    for (const elemento of arrItens) {
+        if (elemento.classList.contains("selecionou")) {
+            elemento.style.textDecoration = 'line-through'
+        }
+    }
+}
